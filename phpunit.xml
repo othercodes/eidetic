@@ -1,0 +1,22 @@
+<phpunit bootstrap="vendor/autoload.php" verbose="true" stopOnError="true" stopOnFailure="true">
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">src</directory>
+        </whitelist>
+    </filter>
+    <logging>
+        <log type="testdox-text" target="php://stdout" showUncoveredFiles="false"/>
+        <log type="coverage-clover" target="coverage.xml"/>
+    </logging>
+    <testsuites>
+        <testsuite name="Value">
+            <file>tests/Unit/ValueTest.php</file>
+        </testsuite>
+        <testsuite name="Version">
+            <file>tests/Unit/VersionTest.php</file>
+        </testsuite>
+        <testsuite name="Version">
+            <file>tests/Unit/VersionControlSystemTest.php</file>
+        </testsuite>
+    </testsuites>
+</phpunit>
